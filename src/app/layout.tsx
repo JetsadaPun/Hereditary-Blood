@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +13,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <div className="">
+          <nav className=" mx-10 border-b-2 border-b-black">
+            <div className="max-w-screen-xl  flex flex-wrap items-center justify-between p-4">
+              <a
+                href=""
+                className="flex items-center space-x-3 rtl:space-x-reverse"
+              >
+                <img
+                  src="excited-blood.webp"
+                  className="h-10 w-10"
+                  alt="Blood Logo"
+                />
+                <p className=" self-center text-2xl font-semibold whitespace-nowrap dark:text-black">
+                  หน้าหลัก
+                </p>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div className="mx-10">{children}</div>
       </body>
     </html>
   );
