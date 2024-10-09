@@ -6,7 +6,7 @@ export default function page() {
   const [motherBloodType, setMotherBloodType] = useState("Iᵃ");
   const [showResults, setShowResults] = useState(false);
   return (
-    <div className="min-h-screen bg-[#ffffff] flex flex-col items-center p-6 ">
+    <div className="min-h-full bg-[#ffffff] flex flex-col items-center p-6 ">
       <h1 className="text-center text-2xl font-semibold mb-6 font-thin	">
         ต้องการตรวจหมู่เลือดของลูก จากพ่อและแม่
       </h1>
