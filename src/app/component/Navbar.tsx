@@ -3,8 +3,8 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <nav className='mx-10 border-b-2 border-b-black'>
-      <div className="max-w-screen-xl  flex flex-wrap items-center justify-between p-4">
+    <nav>
+      <div className="flex w-full h-[80px] border-4 border-b-mainred">
         <div className="flex items-center justify-between w-full px-8">
           <div className="flex items-center">
             <Link href={'/'}>
