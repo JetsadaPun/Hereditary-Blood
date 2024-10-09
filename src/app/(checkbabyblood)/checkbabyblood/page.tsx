@@ -6,11 +6,11 @@ export default function page() {
   const [motherBloodType, setMotherBloodType] = useState("Iᵃ");
   const [showResults, setShowResults] = useState(false);
   return (
-    <div className="min-h-screen bg-[#ffffff] flex flex-col items-center p-6">
+    <div className="min-h-screen bg-[#ffffff] flex flex-col items-center p-6 ">
       <h1 className="text-center text-2xl font-semibold mb-6 font-thin	">
         ต้องการตรวจหมู่เลือดของลูก จากพ่อและแม่
       </h1>
-      <div className="flex justify-center items-start space-x-12 mb-8 relative ">
+      <div className="flex justify-center items-start space-x-40 mb-8 relative ">
         <div className="flex flex-col items-center">
           <img
             src="/dad.png"
@@ -24,16 +24,14 @@ export default function page() {
             className="bg-[#a63429] text-white px-4 py-2 rounded-lg w-52 text-center"
           >
             <option value="ii">ii</option>
-            <option value="Iᵃ">Iᵃ</option>
-            <option value="Iᵇ">Iᵇ</option>
+            <option value="IᴬIᴬ">IᴬIᴬ</option>
+            <option value="Iᴬi">Iᴬi</option>
+            <option value="IᴮIᴮ">IᴮIᴮ</option>
+            <option value="Iᴮi">Iᴮi</option>
+            <option value="IᴬIᴮ">IᴬIᴮ</option>
           </select>
         </div>
-        <button
-          onClick={() => setShowResults(true)}
-          className="bg-[#592520] text-white px-6 py-3 rounded-full text-lg mb-6 bottom-0"
-        >
-          ตรวจผลลัพธ์
-        </button>
+        <div className=""></div>
         <div className="flex flex-col items-center ">
           <img
             src="/mom.png"
@@ -46,13 +44,23 @@ export default function page() {
             onChange={(e) => setMotherBloodType(e.target.value)}
             className="bg-[#a63429] text-white px-4 py-2 rounded-lg w-52 text-center"
           >
-            <option value="Iᵃ">Iᵃ</option>
-            <option value="Iᵇ">Iᵇ</option>
             <option value="ii">ii</option>
+            <option value="IᴬIᴬ">IᴬIᴬ</option>
+            <option value="Iᴬi">Iᴬi</option>
+            <option value="IᴮIᴮ">IᴮIᴮ</option>
+            <option value="Iᴮi">Iᴮi</option>
+            <option value="IᴬIᴮ">IᴬIᴮ</option>
           </select>
         </div>
       </div>
-
+      <div className="flex justify-center items-center my-5">
+        <button
+          onClick={() => setShowResults(true)}
+          className="bg-[#592520] text-white px-6 py-3 rounded-full text-lg "
+        >
+          ตรวจผลลัพธ์
+        </button>
+      </div>
       <div className="text-center mb-4">
         <p className="text-xl font-semibold font-thin">
           ความน่าจะเป็นหมู่เลือดของลูกที่จะเกิดขึ้น
