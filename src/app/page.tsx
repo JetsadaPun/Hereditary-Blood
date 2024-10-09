@@ -27,7 +27,7 @@ function Page() {
         <div className="bg-mainred rounded-xl flex flex-col items-center p-6 w-[300px] h-[350px] shadow-lg">
           <img src="./selec2.png" alt="Logo" className="h-[150px] w-auto mb-4 " />
           <p className="text-center text-white text-lg">ต้องการหมู่เลือดของพ่อหรือแม่</p>
-          <Link href={'/'}>{/*ใส่พาทของหน้าตรวจเลือดพ่อแม่*/}
+          <Link href={'/checkbloodparent'}> {/*ใส่พาทของหน้าตรวจเลือดพ่อแม่*/}
             <button className="bg-white text-black px-8 py-3 mt-6 rounded-full text-lg">
               ตรวจ
             </button>
