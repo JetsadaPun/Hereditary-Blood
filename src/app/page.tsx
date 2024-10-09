@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-full bg-[#ffffff] ">
       <div className="flex items-center justify-center ">
-        <div className="text-5xl font-bold text-center my-5 ">
+        <div className="text-5xl font-bold text-center my-5">
           เลือกตรวจหมู่เลือด
         </div>
         <img
@@ -25,9 +25,9 @@ export default function Home() {
             className="h-[150px] w-auto mb-4"
           />
           <p className="text-center text-white text-lg">
-            ต้องการหมู่เลือดของลูก
+            ต้องการตรวจหมู่เลือดของลูก
           </p>
-          <Link href={"/"}>
+          <Link href={"/checkbabyblood"}>
             {" "}
             {/*ใส่พาทของหน้าตรวจเลือดลูก*/}
             <button className="bg-white text-black px-8 py-3 mt-6 rounded-full text-lg">
@@ -43,9 +43,9 @@ export default function Home() {
             className="h-[150px] w-auto mb-4 "
           />
           <p className="text-center text-white text-lg">
-            ต้องการหมู่เลือดของพ่อหรือแม่
+            ต้องการตรวจหมู่เลือดของพ่อ/แม่
           </p>
-          <Link href={"/checkbabyblood"}>
+          <Link href={"/checkbloodparent"}>
             {/*ใส่พาทของหน้าตรวจเลือดพ่อแม่*/}
             <button className="bg-white text-black px-8 py-3 mt-6 rounded-full text-lg">
               ตรวจ
@@ -60,9 +60,9 @@ export default function Home() {
             className="h-[150px] w-auto mb-4"
           />
           <p className="text-center text-white text-lg">
-            ต้องการหมู่เลือดของตนเอง
+            ต้องการตรวจหมู่เลือดของตนเอง
           </p>
-          <Link href={"/"}>
+          <Link href={"/anti_test"}>
             {/*ใส่พาทของหน้าตรวจเลือดตนเอง*/}
             <button className="bg-white text-black px-8 py-3 mt-6 rounded-full text-lg">
               ตรวจ
