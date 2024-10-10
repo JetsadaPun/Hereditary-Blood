@@ -5,7 +5,9 @@ import React, { useState } from "react";
 
 export default function Page() {
   const [babyBloodType, setBabyBloodType] = useState("IᴬIᴬ");
-  const [parentBloodType, setParentBloodType] = useState("IᴬIᴬ");
+  const [fatherBloodType, setFatherBloodType] = useState("IᴬIᴬ");
+  const [motherBloodType, setMotherBloodType] = useState("IᴬIᴬ");
+
   const [showResults, setShowResults] = useState(false);
   const [possibleParents, setPossibleParents] = useState<
     Array<{ type: string; percentage: number }>
@@ -17,38 +19,39 @@ export default function Page() {
 
     // ตรวจสอบหมู่เลือดจากลูก
     // ตรวจสอบหมู่เลือดจากพ่อแม่และลูก
-    const combinedBloodType = `${parentBloodType}-${babyBloodType}`;
+    const combinedBloodType = `${fatherBloodType}-${motherBloodType}-${babyBloodType}`;
+
 
     switch (combinedBloodType) {
-      case "IᴬIᴬ-IᴬIᴬ":
+      case "IᴬIᴬ-IᴬIᴬ-IᴬIᴬ":
         possibleOutcomes.push(
           { type: "IᴬIᴬ", percentage: 100 },
           { type: "Iᴬi", percentage: 0 },
           { type: "ii", percentage: 0 }
         );
         break;
-      case "Iᴬi-IᴬIᴬ":
+      case "Iᴬi-Iᴬi-Iᴬi":
         possibleOutcomes.push(
           { type: "IᴬIᴬ", percentage: 50 },
           { type: "Iᴬi", percentage: 50 },
           { type: "ii", percentage: 0 }
         );
         break;
-      case "IᴮIᴮ-IᴮIᴮ":
+      case "IᴮIᴮ-IᴮIᴮ-IᴮIᴮ":
         possibleOutcomes.push(
           { type: "IᴮIᴮ", percentage: 100 },
           { type: "Iᴮi", percentage: 0 },
           { type: "ii", percentage: 0 }
         );
         break;
-      case "Iᴮi-IᴮIᴮ":
+      case "Iᴮi-Iᴮi-IᴮIᴮ":
         possibleOutcomes.push(
           { type: "IᴮIᴮ", percentage: 50 },
           { type: "Iᴮi", percentage: 50 },
           { type: "ii", percentage: 0 }
         );
         break;
-      case "IᴬIᴮ-IᴬIᴮ":
+      case "IᴬIᴮ-IᴬIᴮ-IᴬIᴮ":
         possibleOutcomes.push(
           { type: "IᴬIᴬ", percentage: 25 },
           { type: "IᴮIᴮ", percentage: 25 },
@@ -57,7 +60,7 @@ export default function Page() {
           { type: "ii", percentage: 0 }
         );
         break;
-      case "ii-ii":
+      case "ii-ii-ii":
         possibleOutcomes.push(
           { type: "ii", percentage: 100 },
           { type: "Iᴬi", percentage: 0 },
@@ -70,6 +73,7 @@ export default function Page() {
         possibleOutcomes.push({ type: "ไม่ใช่ลูกของพ่อแม่", percentage });
         break;
     }
+    
 
     setPossibleParents(possibleOutcomes);
     setShowResults(true);
@@ -123,36 +127,50 @@ export default function Page() {
           </div>
 
           {/* พ่อแม่ */}
-          <div className="flex flex-col items-center">
-            <div className="flex items-center justify-center space-x-4">
-              <img
-                src="/Daddy.png"
-                alt="Father"
-                className="w-20 h-20 rounded-full mb-4"
-              />
-              <img
-                src="/mom.png"
-                alt="Mother"
-                className="w-20 h-20 rounded-full mb-4"
-              />
-            </div>
+          {/* รูปพ่อ */}
+    <div className="flex flex-col items-center">
+      <img
+        src="/Daddy.png"
+        alt="Father"
+        className="w-20 h-20 rounded-full mb-4"
+      />
+      <label className="text-lg mb-4">Input ของพ่อ :</label>
+      <select
+        value={fatherBloodType}
+        onChange={(e) => setFatherBloodType(e.target.value)}
+        className="bg-[#a63429] text-white px-4 py-2 rounded-lg w-52 text-center"
+      >
+        <option value="IᴬIᴬ">IᴬIᴬ</option>
+        <option value="Iᴬi">Iᴬi</option>
+        <option value="IᴮIᴮ">IᴮIᴮ</option>
+        <option value="Iᴮi">Iᴮi</option>
+        <option value="IᴬIᴮ">IᴬIᴮ</option>
+        <option value="ii">ii</option>
+      </select>
+    </div>
 
-            <label className="text-lg mb-4">Input ของพ่อหรือแม่ :</label>
-            <select
-              value={parentBloodType}
-              onChange={(e) => setParentBloodType(e.target.value)}
-              className="bg-[#a63429] text-white px-4 py-2 rounded-lg w-52 text-center"
-            >
-              <option value="IᴬIᴬ">IᴬIᴬ</option>
-              <option value="Iᴬi">Iᴬi</option>
-              <option value="IᴮIᴮ">IᴮIᴮ</option>
-              <option value="Iᴮi">Iᴮi</option>
-              <option value="IᴬIᴮ">IᴬIᴮ</option>
-              <option value="ii">ii</option>
-            </select>
-          </div>
-        </div>
-
+    {/* รูปแม่ */}
+    <div className="flex flex-col items-center">
+      <img
+        src="/mom.png"
+        alt="Mother"
+        className="w-20 h-20 rounded-full mb-4"
+      />
+      <label className="text-lg mb-4">Input ของแม่ :</label>
+      <select
+        value={motherBloodType}
+        onChange={(e) => setMotherBloodType(e.target.value)}
+        className="bg-[#a63429] text-white px-4 py-2 rounded-lg w-52 text-center"
+      >
+        <option value="IᴬIᴬ">IᴬIᴬ</option>
+        <option value="Iᴬi">Iᴬi</option>
+        <option value="IᴮIᴮ">IᴮIᴮ</option>
+        <option value="Iᴮi">Iᴮi</option>
+        <option value="IᴬIᴮ">IᴬIᴮ</option>
+        <option value="ii">ii</option>
+      </select>
+    </div>
+  </div>
         {/* ปุ่มคำนวณ */}
         <div className="flex justify-center mt-10">
           <button
@@ -179,7 +197,7 @@ export default function Page() {
                   <div className="bg-[#9D3B3B] text-white rounded-full flex items-center justify-center w-52 h-10">
                     <p className="font-bold ">
                       {item.percentage === 0
-                        ? `${item.type}: คุณไม่ใช่ลูกของพ่อแม่`
+                        ? `${item.type}: Unknown`
                         : `${item.type}: ${item.percentage}%`}
                     </p>
                   </div>
