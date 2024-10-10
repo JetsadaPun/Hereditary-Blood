@@ -1,12 +1,110 @@
 "use client";
+import React from "react";
+import { useState, useEffect } from "react";
+import PossibilityCard from "@/app/PossibilityCard";
+import datasets, { DataSet } from "@/app/datasets";
 import { StepBack } from "lucide-react";
 import Link from "next/link";
-import React from "react";
-import { useState } from "react";
+
 export default function page() {
   const [fatherBloodType, setFatherBloodType] = useState("ii");
-  const [motherBloodType, setMotherBloodType] = useState("Iᵃ");
+  const [motherBloodType, setMotherBloodType] = useState("ii");
   const [showResults, setShowResults] = useState(false);
+  const [selectedData, setSelectedData] = useState<DataSet[]>(datasets[1]);
+
+  useEffect(() => {
+    if (fatherBloodType === "ii" && motherBloodType === "ii") {
+      setSelectedData(datasets[1]);
+    } else if (
+      (fatherBloodType === "ii" && motherBloodType === "IᴬIᴬ") ||
+      (fatherBloodType === "IᴬIᴬ" && motherBloodType === "ii")
+    ) {
+      setSelectedData(datasets[2]);
+    } else if (
+      (fatherBloodType === "ii" && motherBloodType === "Iᴬi") ||
+      (fatherBloodType === "Iᴬi" && motherBloodType === "ii")
+    ) {
+      setSelectedData(datasets[3]);
+    } else if (
+      (fatherBloodType === "ii" && motherBloodType === "IᴮIᴮ") ||
+      (fatherBloodType === "IᴮIᴮ" && motherBloodType === "ii")
+    ) {
+      setSelectedData(datasets[4]);
+    } else if (
+      (fatherBloodType === "ii" && motherBloodType === "Iᴮi") ||
+      (fatherBloodType === "Iᴮi" && motherBloodType === "ii")
+    ) {
+      setSelectedData(datasets[5]);
+    } else if (
+      (fatherBloodType === "ii" && motherBloodType === "IᴬIᴮ") ||
+      (fatherBloodType === "IᴬIᴮ" && motherBloodType === "ii")
+    ) {
+      setSelectedData(datasets[6]);
+    } else if (fatherBloodType === "IᴬIᴬ" && motherBloodType === "IᴬIᴬ") {
+      setSelectedData(datasets[7]);
+    } else if (
+      (fatherBloodType === "IᴬIᴬ" && motherBloodType === "Iᴬi") ||
+      (fatherBloodType === "Iᴬi" && motherBloodType === "IᴬIᴬ")
+    ) {
+      setSelectedData(datasets[8]);
+    } else if (
+      (fatherBloodType === "IᴬIᴬ" && motherBloodType === "IᴮIᴮ") ||
+      (fatherBloodType === "IᴮIᴮ" && motherBloodType === "IᴬIᴬ")
+    ) {
+      setSelectedData(datasets[9]);
+    } else if (
+      (fatherBloodType === "IᴬIᴬ" && motherBloodType === "Iᴮi") ||
+      (fatherBloodType === "Iᴮi" && motherBloodType === "IᴬIᴬ")
+    ) {
+      setSelectedData(datasets[10]);
+    } else if (
+      (fatherBloodType === "IᴬIᴬ" && motherBloodType === "IᴬIᴮ") ||
+      (fatherBloodType === "IᴬIᴮ" && motherBloodType === "IᴬIᴬ")
+    ) {
+      setSelectedData(datasets[11]);
+    } else if (fatherBloodType === "Iᴬi" && motherBloodType === "Iᴬi") {
+      setSelectedData(datasets[12]);
+    } else if (
+      (fatherBloodType === "Iᴬi" && motherBloodType === "IᴮIᴮ") ||
+      (fatherBloodType === "IᴮIᴮ" && motherBloodType === "Iᴬi")
+    ) {
+      setSelectedData(datasets[13]);
+    } else if (
+      (fatherBloodType === "Iᴬi" && motherBloodType === "Iᴮi") ||
+      (fatherBloodType === "Iᴮi" && motherBloodType === "Iᴬi")
+    ) {
+      setSelectedData(datasets[14]);
+    } else if (
+      (fatherBloodType === "Iᴬi" && motherBloodType === "IᴬIᴮ") ||
+      (fatherBloodType === "IᴬIᴮ" && motherBloodType === "Iᴬi")
+    ) {
+      setSelectedData(datasets[15]);
+    } else if (fatherBloodType === "IᴮIᴮ" && motherBloodType === "IᴮIᴮ") {
+      setSelectedData(datasets[16]);
+    } else if (
+      (fatherBloodType === "IᴮIᴮ" && motherBloodType === "Iᴮi") ||
+      (fatherBloodType === "Iᴮi" && motherBloodType === "IᴮIᴮ")
+    ) {
+      setSelectedData(datasets[17]);
+    } else if (
+      (fatherBloodType === "IᴮIᴮ" && motherBloodType === "IᴬIᴮ") ||
+      (fatherBloodType === "IᴬIᴮ" && motherBloodType === "IᴮIᴮ")
+    ) {
+      setSelectedData(datasets[18]);
+    } else if (fatherBloodType === "Iᴮi" && motherBloodType === "Iᴮi") {
+      setSelectedData(datasets[19]);
+    } else if (
+      (fatherBloodType === "Iᴮi" && motherBloodType === "IᴬIᴮ") ||
+      (fatherBloodType === "IᴬIᴮ" && motherBloodType === "Iᴮi")
+    ) {
+      setSelectedData(datasets[20]);
+    } else if (fatherBloodType === "IᴬIᴮ" && motherBloodType === "IᴬIᴮ") {
+      setSelectedData(datasets[21]);
+    }
+
+    setShowResults(false);
+  }, [fatherBloodType, motherBloodType]);
+
   return (
     <div>
       <Link href={"/"}>
@@ -16,7 +114,7 @@ export default function page() {
         </button>
       </Link>
       <div className="min-h-full bg-[#ffffff] flex flex-col items-center p-6 ">
-        <h1 className="text-center text-2xl font-semibold mb-6 font-thin">
+        <h1 className="text-center text-2xl font-semibold mb-6 font-thin	">
           ต้องการตรวจหมู่เลือดของลูก จากพ่อและแม่
         </h1>
         <div className="flex justify-center items-start space-x-40 mb-8 relative ">
@@ -62,44 +160,31 @@ export default function page() {
             </select>
           </div>
         </div>
-        <div className="flex justify-center mt-10">
-          <button
+        
+        <button
             onClick={() => setShowResults(true)}
             className="flex justify-center content-center bg-custom-red-c rounded-2xl w-fit h-fit"
           >
             <h1 className="text-lg text-white px-10 py-3">ตรวจผลลัพธ์</h1>
           </button>
-        </div>
-
         <div
-          className={`flex justify-center space-x-8 ${
+          className={`flex flex-col justify-center  ${
             !showResults ? "hidden" : ""
           }`}
         >
           <div className="text-center mb-4">
-            <p className="text-xl font-semibold font-thin">
+            <p className="text-xl font-semibold font-thin py-5">
               ความน่าจะเป็นหมู่เลือดของลูกที่จะเกิดขึ้น
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-4">
-            <div className="bg-[#9D3B3B] text-white rounded-full flex items-center justify-center w-52 h-10">
-              <p className="font-bold">ii: กรุ๊ป O : 50%</p>
-            </div>
-            <div className="bg-[#c94f52] rounded-lg p-4 w-52 text-center">
-              <p className="text-sm text-white">
-                ให้ได้รับเลือด O แต่กรุ๊ปรับได้คนเดียว
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center space-y-4">
-            <div className="bg-[#9D3B3B] text-white rounded-full flex items-center justify-center w-52 h-10">
-              <p className="font-bold">Iᵃ: กรุ๊ป A : 50%</p>
-            </div>
-            <div className="bg-[#c94f52] rounded-lg p-4 w-52 text-center mt-4">
-              <p className="text-sm text-white">
-                ให้ได้รับเลือด A แต่กรุ๊ปรับได้คนเดียว
-              </p>
-            </div>
+          <div className="flex flex-row justify-center items-center w-full space-x-8">
+            {selectedData.map((data) => (
+              <PossibilityCard
+                key={data.id}
+                inf1={data.inf1}
+                inf2={data.inf2}
+              />
+            ))}
           </div>
         </div>
       </div>

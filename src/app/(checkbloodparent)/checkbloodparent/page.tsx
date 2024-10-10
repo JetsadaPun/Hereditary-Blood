@@ -165,17 +165,19 @@ export default function Page() {
         {/* ผลลัพธ์ */}
         {showResults && (
           <div className="text-center mb-4">
-            <p className="text-xl font-semibold font-thin">
-              ความน่าจะเป็นหมู่เลือดที่จะเกิดขึ้นของพ่อหรือแม่
-            </p>
+            <div>
+              <p className="text-xl font-semibold font-thin py-5">
+                ความน่าจะเป็นหมู่เลือดที่จะเกิดขึ้นของพ่อหรือแม่
+              </p>
+            </div>
             <div className="flex justify-center space-x-8">
               {possibleParents.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center space-y-4"
+                  className="flex flex-col items-center space-y-4 py-5"
                 >
                   <div className="bg-[#9D3B3B] text-white rounded-full flex items-center justify-center w-52 h-10">
-                    <p className="font-bold">
+                    <p className="font-bold ">
                       {item.percentage === 0
                         ? `${item.type}: คุณไม่ใช่ลูกของพ่อแม่`
                         : `${item.type}: ${item.percentage}%`}
