@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-full bg-[#ffffff] ">
       <div className="flex items-center justify-center ">
-        <div className="text-4xl font-bold text-center my-5 underline">
+        <div className="text-4xl font-bold text-center my-5 text-gray-700">
           เลือกตรวจหมู่เลือด 
         </div>
         <img src="./blood_bag.png" className="h-[70px] w-auto mr-4"/>

@@ -108,9 +108,9 @@ export default function page() {
   return (
     <div>
       <Link href={"/"}>
-        <button className="flex justify-center content-center bg-custom-red-bb rounded-xl w-32 mt-3 ml-3 h-10">
+        <button className="flex justify-center content-center bg-custom-red-bb rounded-xl w-32 mt-3 ml-10 h-10 hover:bg-[#8B0000]">
           <StepBack className="text-white mt-2 mr-2 fill-white"></StepBack>
-          <h1 className="text-xl text-white mt-1.5">Back</h1>
+          <h1 className="text-xl text-white mt-1.5 ">Back</h1>
         </button>
       </Link>
       <div className="min-h-full bg-[#ffffff] flex flex-col items-center p-6 ">
