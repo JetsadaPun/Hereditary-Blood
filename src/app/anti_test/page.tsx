@@ -76,11 +76,11 @@ export default function page() {
           </button>
         </Link>
         <div className="flex justify-center mt-5">
-          <h1 className="text-2xl">
+          <h1 className="text-center text-2xl font-semibold mb-6">
             ตรวจสอบหมู่เลือดของตัวเองจากแอนติเจนและแอนติบอดี้
           </h1>
         </div>
-        <div className="grid grid-cols-2 justify-center mt-10">
+        <div className="grid grid-cols-2 justify-center">
           <div>
             <div className="flex justify-center ml-36">
               <h1 className="text-xl">ANTIGEN</h1>
@@ -88,7 +88,7 @@ export default function page() {
             <div className="flex justify-center ml-36">
               <img src="./antigen.png" className="h-[170px]"></img>
             </div>
-            <div className="flex justify-center ml-36 text-center justify-center">
+            <div className="flex justify-center ml-36 text-center">
               <Select onValueChange={(value) => setAntigen(value)}>
                 <SelectTrigger className="w-[180px] bg-custom-red text-white rounded-3xl text-center justify-center">
                   <SelectValue placeholder="Select Antigen" />

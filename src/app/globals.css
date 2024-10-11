@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Itim', 'Noto Sans Thai', cursive;
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  
 }
 
 h1 {
-  font-family: 'Itim', 'Noto Sans Thai', cursive;
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  
 }
 
 @layer base {

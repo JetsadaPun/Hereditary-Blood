@@ -114,7 +114,7 @@ export default function page() {
         </button>
       </Link>
       <div className="min-h-full bg-[#ffffff] flex flex-col items-center p-6 ">
-        <h1 className="text-center text-2xl font-semibold mb-6 font-thin	">
+        <h1 className="text-center text-2xl mb-6 font-thin	">
           ต้องการตรวจหมู่เลือดของลูก จากพ่อและแม่
         </h1>
         <div className="flex justify-center items-start space-x-40 mb-8 relative ">
@@ -168,19 +168,20 @@ export default function page() {
             <h1 className="text-lg text-white px-10 py-3">ตรวจผลลัพธ์</h1>
           </button>
         <div
-          className={`flex flex-col justify-center  ${
+          className={`flex flex-col justify-center ${
             !showResults ? "hidden" : ""
           }`}
         >
-          <div className="text-center mb-4">
-            <p className="text-xl font-semibold font-thin py-5">
+          <div className="text-center ">
+            <p className="text-xl font-semibold py-5">
               ความน่าจะเป็นหมู่เลือดของลูกที่จะเกิดขึ้น
             </p>
           </div>
-          <div className="flex flex-row justify-center items-center w-full space-x-8">
+          <div className="flex flex-row justify-center items-center w-full">
             {selectedData.map((data) => (
               <PossibilityCard
                 key={data.id}
+                type={data.type}
                 inf1={data.inf1}
                 inf2={data.inf2}
               />
