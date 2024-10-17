@@ -21,9 +21,9 @@ export default function Home() {
             className="h-[150px] w-auto mb-4"
           />
           <p className="text-center text-white text-lg ">
-            ต้องการตรวจหมู่เลือดของลูก
+          ตรวจหาความน่าจะเป็นของหมู่เลือดของลูกจากพ่อแม่
           </p>
-          <div className="mt-10">
+          <div className="mt-2">
           <Link href={"/checkbabyblood"}>
             {" "}
             {/*ใส่พาทของหน้าตรวจเลือดลูก*/}
@@ -57,7 +57,7 @@ export default function Home() {
           <img
             src="./selec3.png"
             alt="Logo"
-            className="h-[150px] w-auto mb-4"
+            className="h-[150px] w-auto mb-3"
           />
           <p className="text-center text-white text-lg">
             ต้องการตรวจหมู่เลือดของตนเอง

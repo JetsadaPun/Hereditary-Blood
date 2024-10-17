@@ -115,7 +115,7 @@ export default function page() {
       </Link>
       <div className="min-h-full bg-[#ffffff] flex flex-col items-center p-6 ">
         <h1 className="text-center text-2xl mb-6 font-thin	">
-          ต้องการตรวจหมู่เลือดของลูก จากพ่อและแม่
+          ตรวจหาความน่าจะเป็นของหมู่เลือดของลูกจากพ่อแม่
         </h1>
         <div className="flex justify-center items-start space-x-40 mb-8 relative ">
           <div className="flex flex-col items-center">
